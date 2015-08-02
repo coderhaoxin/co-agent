@@ -19,12 +19,14 @@ describe('## koao-knex', function() {
             max: 10
           },
 
-          table: table,
-          createTable: function(t) {
-            t.increments('id').primary()
-            t.string('name', 100)
-            t.string('desc', 100)
-          },
+          tables: [{
+            name: table,
+            createTable: function(t) {
+              t.increments('id').primary()
+              t.string('name', 100)
+              t.string('desc', 100)
+            }
+          }],
 
           connected: resolve,
           onerror: reject
